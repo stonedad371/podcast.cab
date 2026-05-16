@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>podcast.cab · 一份音频 + 字幕 → 一条短视频 + 全套发布文案</title>
+  <meta name="description" content="上传播客音频和 SRT 字幕，AI 自动出 9:16 竖屏视频。每章独立 AI 背景图（不满意点重生）、章节卡 + 金句 + 字幕同步、片尾互动引导，再附赠抖音/小红书/视频号 发布标题、简介、标签。完全本地运行。" />
+
+  <!-- OG / 社交分享 -->
+  <meta property="og:title" content="podcast.cab · 一份音频 → 一条短视频 + 全套发布文案" />
+  <meta property="og:description" content="AI 全自动：每章独立背景图（可重生）、字幕同步可微调、自动生成抖音/小红书/视频号 发布文案。Docker 一键启动。" />
+  <meta property="og:image" content="/assets/poster.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://podcast.cab" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/jpeg" href="/assets/poster.jpg" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<nav class="nav">
+  <a href="/" class="brand">podcast.cab</a>
+  <div class="nav-links">
+    <a href="#features">特性</a>
+    <a href="#how">怎么用</a>
+    <a href="#download">下载</a>
+    <a href="https://github.com/stonedad371/podcast2video" target="_blank" rel="noopener" class="github">GitHub ↗</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">PODCAST · TO · VIDEO</div>
+    <h1>一份播客<br/>→ 一条短视频<br/>+ 全套发布文案</h1>
+    <p class="hero-sub">
+      上传 mp3 + SRT，AI 自动出 9:16 竖屏视频：<br/>
+      每章独立背景图（不满意点重生）、字幕同步、金句卡、片尾互动引导。<br/>
+      <strong>还顺手帮你写好抖音 / 小红书 / 视频号 的标题、简介、标签。</strong>
+    </p>
+    <div class="hero-cta">
+      <a href="#download" class="btn-primary">⬇ 下载使用</a>
+      <a href="#demo" class="btn-secondary">看演示 →</a>
+    </div>
+    <div class="hero-badges">
+      <span>✓ AI 全自动</span>
+      <span>✓ 每章可重生图</span>
+      <span>✓ 发布文案附送</span>
+      <span>✓ 完全本地</span>
+      <span>✓ 开源免费</span>
+    </div>
+  </div>
+  <div class="hero-video">
+    <video autoplay muted loop playsinline poster="/assets/poster.jpg">
+      <source src="/assets/demo-30s.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+
+<!-- Demo 完整视频 -->
+<section id="demo" class="demo">
+  <h2>真实成片，全自动产出</h2>
+  <p class="demo-sub">某交易者访谈 · 4 分 22 秒 · 5 个章节 + 5 张独立 AI 背景图 + 字幕同步 + 5 句金句卡 + 浮动粒子 + Ken Burns 平移 + 片尾"关注/点赞/评论/收藏"引导</p>
+  <div class="demo-frame">
+    <video controls poster="/assets/poster.jpg" preload="metadata">
+      <source src="/assets/demo-full.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="features">
+  <h2>核心能力</h2>
+  <div class="features-grid">
+
+    <div class="feature">
+      <div class="feature-icon">🎬</div>
+      <h3>一拖即出片</h3>
+      <p>拖入 mp3 + srt，自动跑完：切章节 → 写标题副标题 → 挑金句 → 生封面 → 每章生背景图 → 渲染 mp4。可设"全部就绪后自动渲染"。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🖼️</div>
+      <h3>每章独立 AI 背景图，可重生</h3>
+      <p>LLM 按每章节内容写英文提示词，MiniMax 出图。**不满意点 🔄 重生**：填一句中文提示（如"画得更暗一点"、"用瀑布隐喻"），LLM 综合产新 prompt 重出。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">📝</div>
+      <h3>顺手写好发布文案</h3>
+      <p>分析时一并产出**短视频平台**用的标题（带钩子）、简介正文、5–10 个话题标签。一键复制到抖音 / 小红书 / 视频号 直接贴。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🎨</div>
+      <h3>AI 生 9:16 封面</h3>
+      <p>视频首帧即封面合成（背景图 + 标题 + 副标题 + 品牌条 + accent 线），上传平台抓首帧当缩略图。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">💬</div>
+      <h3>章节卡 + 金句卡 + 字幕同步</h3>
+      <p>字幕实时跟声音对齐，章节切换弹胶囊标签，金句到点出大字卡。字幕跟音频对不齐？设置里 slider 微调时间补偿。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">✨</div>
+      <h3>视觉不单调</h3>
+      <p>浮动粒子 + Ken Burns 多向平移 + 章节切换柔光 flash。每章独立"相机方向"，cross-fade 像换了视角。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">👀</div>
+      <h3>片尾互动引导</h3>
+      <p>3 秒片尾自动出"关注 / 点赞 / 评论 / 收藏"4 个动效卡片，专为短视频平台优化的"涨粉"片尾。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🏷️</div>
+      <h3>自定义品牌</h3>
+      <p>设置里填你的品牌名，视频里所有 podcast.cab 字样替换成你的。封面、片头条、片中右上角都改。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🎬</div>
+      <h3>在线预览 + 中文文件名</h3>
+      <p>渲染完页面里直接 9:16 播放器播，不用先下载。要保存时文件名自动用你的中文标题，不是 UUID。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🔒</div>
+      <h3>完全本地 · 一个 API key</h3>
+      <p>Docker 跑在你机器上，音频/字幕/key/成品都在本机，podcast.cab 不收任何数据。一个 MiniMax key 同时跑文本分析 + 生图。</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">⚛️</div>
+      <h3>Remotion 渲染，全开源</h3>
+      <p>React 渲染每一帧，1080×1920 @ 30fps H.264 + AAC。配色字体布局都在 <code>remotion/Composition.tsx</code>，会 React 就能改。MIT 许可。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- How it works -->
+<section id="how" class="how">
+  <h2>三步出片</h2>
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>装 Docker Desktop</h3>
+      <p>一次性安装，<a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">官网下载</a>，或用 <a href="https://orbstack.dev" target="_blank" rel="noopener">OrbStack</a>（国内可下、更轻）。装完打开等鲸鱼图标变绿。</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>下载本工具 + 启动</h3>
+      <p>从 GitHub clone 或下载 ZIP，Mac 双击 <code>start.command</code>，浏览器自动打开 <code>localhost:3010</code>。</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>拖入音频 + 字幕</h3>
+      <p>填一次 MiniMax key，拖入 mp3 + srt。等几分钟看预览，不满意点重生章节图，满意点开始生成，下载 mp4 + 复制发布文案。</p>
+    </div>
+
+  </div>
+
+  <div class="how-note">
+    <strong>没有播客音频和字幕？</strong>
+    用 <a href="https://yuban.yun/?ref=52UM5HD3" target="_blank" rel="noopener" class="yuban">yuban.yun</a> 一键生成播客音频与时间戳字幕，导出 mp3 + srt 直接喂给 podcast.cab。
+  </div>
+</section>
+
+<!-- Download -->
+<section id="download" class="download">
+  <h2>开始用</h2>
+  <p class="download-sub">完全免费、开源，本地运行。</p>
+
+  <div class="download-options">
+
+    <a href="https://github.com/stonedad371/podcast2video" target="_blank" rel="noopener" class="dl-card primary">
+      <div class="dl-icon">⬇</div>
+      <div>
+        <div class="dl-title">从 GitHub 下载</div>
+        <div class="dl-sub">最新版 · 含 start.command</div>
+      </div>
+    </a>
+
+    <div class="dl-card">
+      <div class="dl-icon">💻</div>
+      <div>
+        <div class="dl-title">命令行</div>
+        <div class="dl-sub">
+          <code>git clone git@github.com:stonedad371/podcast2video.git && cd podcast2video && docker compose up</code>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="download-requirements">
+    <strong>系统要求</strong>：macOS / Linux / Windows · 8GB+ 内存 · 5GB 硬盘 · Docker Desktop 或 OrbStack
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2>几个常见问题</h2>
+
+  <details>
+    <summary>章节图不满意怎么办？</summary>
+    <p>每张章节图下方有 🔄 重生按钮。点开后弹文本框，可以填一句中文提示（如"画得更暗一点"、"用瀑布隐喻"），LLM 会综合你的提示 + 章节字幕节选重写英文 prompt，再调 MiniMax 出图。不写提示也可以纯抽一次重新生成。</p>
+  </details>
+
+  <details>
+    <summary>字幕跟声音对不齐怎么办？</summary>
+    <p>设置里有"字幕时间补偿" slider，范围 -1.0 到 +1.0 秒，0.05 步进。字幕比声音早出现就往右拖（延后字幕），反之往左拖。默认 +0.2s 补偿 ASR 工具普遍的字幕提前现象。预览实时反映，不用重新渲染。</p>
+  </details>
+
+  <details>
+    <summary>发布文案是什么？跟视频里的标题一样吗？</summary>
+    <p>不一样。视频里的标题（如"8 年亏货到稳定盈利：交易者的至暗与翻盘"）讲究信息量；发布文案的标题（platformTitle）讲究**抓点击**，可以更短更钩子，可带 1-2 个 emoji。还附送一段 50-200 字简介 + 5-10 个话题标签，分别有复制按钮，一键贴到抖音 / 小红书 / 视频号。</p>
+  </details>
+
+  <details>
+    <summary>需要联网吗？</summary>
+    <p>需要——LLM 切章节 / 写标题 / 生封面 / 生章节图 / 写发布文案 都要打 MiniMax 的 API。视频本身的 Remotion 渲染不需要联网。</p>
+  </details>
+
+  <details>
+    <summary>API key 安全吗？数据会上传吗？</summary>
+    <p>Key 存在你本地 <code>./data/config/api-keys.json</code>，权限 600，不会进 Docker 镜像、不会上传任何地方。podcast.cab 也不收集任何数据——你的所有素材和成品都在你机器上。</p>
+  </details>
+
+  <details>
+    <summary>渲染要多久？</summary>
+    <p>首次约 15–30 分钟（要下 ~93MB Chromium 镜像）。之后流程：分析 15-40s + 封面 15-30s + 5 张章节图 1-2min + 渲染 3-5min ≈ <strong>5-8 分钟出一条 4 分钟视频</strong>。机器配置越好越快。</p>
+  </details>
+
+  <details>
+    <summary>支持横版 16:9 吗？</summary>
+    <p>V1 只输出 9:16 竖版（抖音 / 小红书 / 视频号 / B 站竖屏 原生）。横版 16:9 在路上。</p>
+  </details>
+
+  <details>
+    <summary>能改样式吗？</summary>
+    <p>全开源。配色 / 字体 / 布局 / 动效都在 <code>remotion/Composition.tsx</code>，会 React 就能改。粒子数量、Ken Burns 方向、章节切换 flash 颜色这些常用变量都在文件顶部常量区。</p>
+  </details>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">podcast.cab</div>
+      <p>把播客做成可发布的视频 + 自动写发布文案。完全本地，完全开源。</p>
+    </div>
+    <div>
+      <div class="footer-title">链接</div>
+      <a href="https://github.com/stonedad371/podcast2video" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://yuban.yun/?ref=52UM5HD3" target="_blank" rel="noopener">素材生成 · yuban.yun</a>
+      <a href="https://platform.minimaxi.com/subscribe/token-plan?code=6Vt5rNAbqe&source=link" target="_blank" rel="noopener">MiniMax 开放平台</a>
+    </div>
+    <div>
+      <div class="footer-title">技术</div>
+      <a href="https://www.remotion.dev" target="_blank" rel="noopener">Remotion</a>
+      <a href="https://nextjs.org" target="_blank" rel="noopener">Next.js</a>
+      <a href="https://www.docker.com" target="_blank" rel="noopener">Docker</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 podcast.cab · MIT 许可
+  </div>
+</footer>
+
+</body>
+</html>
